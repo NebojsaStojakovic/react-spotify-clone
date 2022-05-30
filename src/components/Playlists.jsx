@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { reducerCases } from "../utils/Constants";
 import { useStateProvider } from "../utils/StateProvider";
@@ -27,9 +27,11 @@ const Playlists = () => {
     };
     getPlaylistData();
   }, [token, dispatch]);
+
   const changeCurrentPlaylist = (selectedPlaylistId) => {
     dispatch({ type: reducerCases.SET_PLAYLIST_ID, selectedPlaylistId });
   };
+
   return (
     <Container>
       <ul>
